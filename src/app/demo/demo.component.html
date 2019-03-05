@@ -1,0 +1,352 @@
+<!--Main Navigation-->
+<header class="intro-header intro-2" style="font-family: 'Montserrat', sans-serif" *ngIf="value">
+
+    <!--Navbar-->
+    <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+      <mdb-navbar-brand style="color:green">
+     <a class="logo navbar-brand waves-light text-success" mdbWavesEffect  style=" font-size: 2em; font-weight:bold"><strong class="text-success">7f Software</strong></a>
+      </mdb-navbar-brand>
+      <links>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item waves-light" mdbWavesEffect>
+            <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active waves-light" mdbWavesEffect>
+            <a class="nav-link" routerLink="/demo">Demo</a>
+          </li>
+          <li class="nav-item waves-light" mdbWavesEffect>
+            <a class="nav-link" routerLink="/aboutus">About Us</a>
+          </li>
+        </ul>
+         
+        <div class="d-flex justify-content-end"><p class="white-text"><a class="green-text font-weight-bold btn btn-success btn-rounded" rounded="true" data-toggle="modal" data-target="#basicExample"
+          (click)="frame.show()" mdbWavesEffect> <i class="fas fa-upload"></i> Upload</a>
+        </p>
+      </div>
+      </links>
+
+     
+    </mdb-navbar>
+
+    <!--Intro Section-->
+    <section class="view intro-2">
+      <div class="full-bg-img mask rgba-gradient">
+        <div class="container flex-center">
+          <div class="d-flex align-items-center content-height w-100">
+            <div class="row flex-center pt-5 mt-3 w-100">
+              <div class="col-md-6 text-center text-md-left mb-5  animated fadeInLeft">
+                <div class="white-text">
+                  <div class="row">
+                    <div class="md-form col-10">
+                        <i class=" prefix white-text"></i>
+                        <input type="text" id="form3" class="form-control  white-text" mdbInput [(ngModel)]="Search">
+                        <label for="form3">Search</label>
+                    </div>
+                    <div class="col-2">
+                        <button type="button" class="btn btn-success btn-rounded" (click)="search()">Search</button>
+
+                    </div>
+                    </div>
+                </div>
+              </div>
+
+             
+              
+              
+            </div>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+      
+    </section>
+    
+
+  </header>
+<div class="intro-2" style="font-family: 'Montserrat', sans-serif" *ngIf="value">
+  <ul class="list-group">
+    <div *ngFor="let res of response">
+      <li class="list-group-item d-flex justify-content-between align-items-center text-success" style="font-weight: bold;font-size:1.6em ;background:rgba(88, 86, 86,0.5)">
+        {{res.name}}
+        <button class="btn btn-success btn-rounded" style="opacity: 1.0" (click)="Visualize(res)">Visualize</button>
+      </li>
+      <hr>
+    </div>
+    </ul>
+  <!--Main Navigation-->
+</div>
+  <div mdbModal #frame="mdbModal" class="modal fade top animated zoomIn" id="frameModalTop" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog form-dark" role="document">
+      <!--Content-->
+      <div class="modal-content card card-image" style="background-image: url('https://images.pexels.com/photos/908283/pexels-photo-908283.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');">
+        <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
+          <!--Header-->
+          <div class="modal-header text-center pb-4">
+            <h3 class="modal-title w-100 white-text font-weight-bold" id="myModalLabel">
+              <strong>UPLOAD</strong>
+              <a class="green-text font-weight-bold">
+                <strong> FILE</strong>
+              </a>
+            </h3>
+            <button type="button" class="close white-text" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <!--Body-->
+          <div class="modal-body">
+            <!--Body-->
+            <div class="md-form mb-5">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="validatedCustomFile" placeholder="Choose a file" value="choose" (change)="onFileChanged($event)" required>
+                    <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                    <div class="invalid-feedback">Example invalid custom file feedback</div>
+                  </div>
+            </div>
+            <!--Grid row-->
+            <div class="row d-flex align-items-center mb-4">
+  
+              <!--Grid column-->
+              <div class="text-center mb-3 col-md-12">
+                <button type="button" mdbBtn color="success" block="true" rounded="true" class="z-depth-1 waves-light" (click)="onUpload()"
+                  mdbWavesEffect>Upload</button>
+              </div>
+              <!--Grid column-->
+  
+            </div>
+            <!--Grid row-->
+  
+            <!--Grid row-->
+           
+            <!--Grid row-->
+  
+          </div>
+        </div>
+      </div>
+      <!--/.Content-->
+    </div>
+  </div>
+
+
+
+
+
+  <div *ngIf="visualize">
+      <div style="background-color:black;font-family: 'Montserrat', sans-serif">
+        
+         <div class="row">
+        <a class="text-success col-2" (click)="Reset()"><i class="fas fa-angle-left fa-lg" style="color: blanchedalmond;padding:13px"></i>7f Software</a>
+         <h6 class="text-success col-2" style="font-weight:bold; padding-top:13px;">Experiment Busisemo</h6>
+         <div class="col-8">
+           <div class="row text-success" style="font-weight: bold;">
+            <p class="col-2" style="padding-top:15px">DATASETS</p>
+            <p class="col-2" style="padding-top:15px">EXPERIMENTS</p>
+            <p class="col-2" style="padding-top:15px">MLI</p>
+            <p class="col-2" style="padding-top:15px">AUTOVIZ</p>
+            <p class="col-2" style="padding-top:15px">DIAGNOSTICS</p>
+            <p class="col-2" style="padding-top:15px">DEPLOYMENTS</p>
+     
+         </div>>
+     
+         </div>
+          </div>
+     </div>
+     
+     <div class="row" style="background-color: black">
+     <div class="col-4" style="padding-left:22px">
+       <p style="color:blanchedalmond">DATASET</p>
+       <p style="font-size: 18px;color:" class="text-success">{{res.name | uppercase }}</p>
+       <div class="row">
+         <div class="col-3"><p style="font-size:8px;color: blanchedalmond">ROWS</p><p style="font-size: 18px;" class="text-success">6K</p></div>
+         <div class="col-3"><p style="font-size:8px;color: blanchedalmond">COLUMNS</p><p style="font-size: 18px;" class="text-success">6K</p></div>
+         <div class="col-3"><p style="font-size:8px;color:blanchedalmond">DROPPED COLS</p><p style="font-size: 18px;" class="text-success">--</p></div>
+         <div class="col-3"><p style="font-size:8px;color:blanchedalmond">VALIDATION DATASET</p><p style="font-size: 18px;" class="text-success">--</p></div>
+     
+       </div>
+     
+     
+     <div class="row" style="background-color:black">
+       
+        <div class="col-6"><p style="color:blanchedalmond;font-size:8px;">WEIGHT COLUMN</p><p style="font-size:18px" class="text-success">---</p></div>
+        <div class="col-6"><p style="color:blanchedalmond;font-size:8px;">TIME COLUMN</p><p style="font-size:18px" class="text-success">[OFF]</p></div>
+      
+       </div>
+     
+     
+       <div class="row" style="background-color:black">
+          
+            <div class="col-3"><p style="color:blanchedalmond;font-size:8px;">TYPE</p><p style="font-size:18px" class="text-success">bool</p></div>
+            <div class="col-3"><p style="color:blanchedalmond;font-size:8px;">COUNT</p><p style="font-size:18px" class="text-success">6000</p></div>
+            <div class="col-3"><p style="color:blanchedalmond;font-size:8px;">UNIQUE</p><p style="font-size:18px" class="text-success">2</p></div>
+            <div class="col-3"><p style="color:blanchedalmond;font-size:8px;">TARGET FREQ</p><p style="font-size:18px" class="text-success">1266</p></div>
+           
+      </div>
+     
+     </div>
+     
+     
+           <div class="col-4">
+             <div class="row">
+               <h6 class="text-success">SCORED 193/298 MODELS ON 1483 FEATURES</h6>
+             </div>
+             <div class="row">
+                 <div id="circle">
+                     <div class="loader">
+                       <div class="loader">
+                           <div class="loader">
+                              <div class="loader">
+                                 <div class="loader">
+                                     <div class="loader">
+                                         <div class="loader">
+                                           </div>
+                                       </div>
+                                   </div>
+                              </div>
+                           </div>
+                       </div>
+                     </div>
+                   </div> 
+           </div>
+     
+           <p class="text-success col-6 d-flex justify-content-end" style="font-size:32px">77%</p>
+     
+         </div>
+     
+     <div class="col-4">
+       <div class="row">
+         <div col-3>
+           <p class="text-success" style="font-size:15px;">EXPERIMENT SETTINGS</p>
+         </div>
+         <div class="col-1"></div>
+         <div col-3>
+             <p class="text-success" style="font-size:15px;">EXPERT SETTINGS</p>
+           </div>
+           <div class="col-1"></div>
+     
+           <div col-3>
+               <p class="text-success" style="font-size:15px;">SCORER</p>
+             </div>
+             <div class="col-1"></div>
+     
+      
+       </div>
+       <div class="row">
+         <div class="col-4">
+           <div class="center">
+               <svg class="progress black noselect" data-progress="65" x="0px" y="0px" viewBox="0 0 80 80">
+                 <path class="track" d="M5,40a35,35 0 1,0 70,0a35,35 0 1,0 -70,0" />
+                 <path class="fill" d="M5,40a35,35 0 1,0 70,0a35,35 0 1,0 -70,0" />
+                 <text class="value" x="50%" y="55%">0%</text>
+                 <text class="text" x="50%" y="115%">Blue</text>
+               </svg>
+              
+             </div>
+         </div>
+         <div class="col-4">
+             <div class="center">
+                 <svg class="progress black noselect" data-progress="65" x="0px" y="0px" viewBox="0 0 80 80">
+                   <path class="track" d="M5,40a35,35 0 1,0 70,0a35,35 0 1,0 -70,0" />
+                   <path class="fill" d="M5,40a35,35 0 1,0 70,0a35,35 0 1,0 -70,0" />
+                   <text class="value" x="50%" y="55%">0%</text>
+                   <text class="text" x="50%" y="115%">Blue</text>
+                 </svg>
+                
+               </div>
+           </div>
+           <div class="col-4">
+               <div class="center">
+                   <svg class="progress black noselect" data-progress="65" x="0px" y="0px" viewBox="0 0 80 80">
+                     <path class="track" d="M5,40a35,35 0 1,0 70,0a35,35 0 1,0 -70,0" />
+                     <path class="fill" d="M5,40a35,35 0 1,0 70,0a35,35 0 1,0 -70,0" />
+                     <text class="value" x="50%" y="55%">0%</text>
+                     <text class="text" x="50%" y="115%">Blue</text>
+                   </svg>
+                  
+                 </div>
+             </div>
+       </div>
+       <div class="row">
+         <div class="col-4">
+         <button class="btn btn-success btn-sm" (click)="Start()">START</button>
+         </div>
+         <div class="col-4">
+             <button class="btn btn-success btn-sm" (click)="Start()">START</button>
+         </div>
+         <div class="col-4">
+             <button class="btn btn-success btn-sm" (click)="Start()">START</button>
+         </div>
+       </div>
+       <div class="row">
+         <div class="col-12">
+     
+         </div>
+       </div>
+       <div class="row">
+          <h4 class="text-success" style="padding:13px">CPU :         ||||||||||||||||||||||||||||||</h4>
+       </div>
+       <div class="row">
+           <h4 class="text-success" style="padding:13px">GPU :         ||||||||||||||||||||||||||||||||||||||||||||||||||||||||</h4>
+        </div>
+     
+     </div>
+         
+         </div>
+     
+     <!-- SECOND ROW STARTS -->
+     
+         <div class="row" style="background-color: black">
+             <div class="col-3">
+                  <div id="myDiv"></div>
+                  <button class="btn btn-success btn-md d-flex justify-content-center " (click)="barPlot('scatter')">VIEW</button>
+
+                   </div>
+             
+                <div class="col-1"></div>
+                   <div class="col-4">
+                       <h4 class="white-text d-flex justify-content-center ">COLUMNS :</h4>
+                       <div class="list-group text-success table-wrapper-scroll-y" style="background-color:black">
+                          <div *ngFor="let col of filter">
+                           <a class="list-group-item waves-light text-success d-flex justify-content-center" style="background:rgba(0, 0, 0, 0.5)" mdbWavesEffect (click)="FilterAdded(col)">{{col | uppercase}}</a>
+                          </div>
+                          </div>
+             
+                 </div>
+             
+             <div class="col-4">
+                   <div id="myDiv2"></div>
+                   <button class="btn btn-success btn-md d-flex justify-content-center" (click)="barPlot('bar')">VIEW</button>
+              </div>
+           </div>
+         </div>             
+     <!-- <div style="height:800px;width:100%" mdbModal #frame="1mdbModal" class="modal fade top animated zoomIn" id="frameModalTop" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+     <div class="modal-dialog form-dark" role="document">
+       Content
+        <div id="mainDiv"></div>
+       /.Content
+     </div>
+   </div>  -->
+
+   <!-- <div id="myTestDiv"></div> -->
+
+<div *ngIf="MainGraph" style="background-color: black">
+
+   <div class="row">
+    <a class="text-success col-2" (click)="Reset1()"><i class="fas fa-angle-left fa-lg" style="color: blanchedalmond;padding:13px"></i>7f Software</a>
+
+    </div>
+    <section style="background-color: black;height:100%">
+      <div>
+        <div>
+            <div id="MainGraphView"></div>
+
+          
+        </div>
+        
+      </div>
+      
+    </section>
+    </div>
+    

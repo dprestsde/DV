@@ -1,0 +1,11 @@
+// Change main active link appearance
+mdb-accordion-item-head.active a h5 {
+    color: red !important;
+    background-color: yellow !important;
+  }
+  
+  // Change nested active links appearance
+  mdb-accordion-item-body a.active {
+    color: red !important;
+    background-color: yellow !important;
+  }

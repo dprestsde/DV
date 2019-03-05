@@ -1,0 +1,144 @@
+
+.intro-header {
+    height: unset !important;
+  }
+  .intro-2 {
+    background: url("https://images.pexels.com/photos/450055/pexels-photo-450055.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")no-repeat center center;
+    background-size: cover;
+  }
+  .view {
+    height: 100vh !important;
+  }
+  .top-nav-collapse {
+    background-color: #86C232 !important;
+  }
+  .navbar:not(.top-nav-collapse) {
+    background: transparent !important;
+  }
+  @media (max-width: 768px) {
+    .navbar:not(.top-nav-collapse) {
+      background: #86C232 !important;
+    }
+  }
+  .rgba-gradient .full-bg-img {
+    background: linear-gradient(45deg, rgba(4, 230, 91, 0.4), rgba(12, 230, 23, 0.4) 100%);
+  }
+  .card {
+    background-color: rgba(229, 228, 255, 0.2);
+  }
+  
+  .md-form .prefix {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  .md-form label {
+    color: #ffffff;
+  }
+  h6 {
+    line-height: 1.7;
+  }
+  @media (max-width: 740px) {
+    .full-height,
+    .full-height body,
+    .full-height header,
+    .full-height header .view {
+      height: 1040px;
+    }
+  }
+
+  .file-field.big .file-path-wrapper {
+    height: 3.2rem; }
+    .file-field.big .file-path-wrapper .file-path {
+    height: 3rem; }
+
+
+
+    #circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    width: 220px;
+      height: 220px;	
+  }
+  
+  .loader {
+      width: calc(100% - 0px);
+    height: calc(100% - 0px);
+    border: 8px solid #162534;
+    border-top: 8px solid rgb(9, 206, 35);
+    border-radius: 50%;
+    animation: rotate 5s linear infinite;
+  }
+  
+  @keyframes rotate {
+  100% {transform: rotate(360deg);}
+  } 
+
+
+
+  /*===== Not The CSS :P =====*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+
+#wrapper{
+    position: relative;
+    top: 80px;
+  width: 404px;
+  background-color: black;
+}
+
+/*===== The CSS =====*/
+.progress{
+    width: 100px;
+    height: 100px;
+}
+.progress .track, .progress .fill{
+    fill: rgba(0, 0, 0, 0);
+    stroke-width: 3;
+}
+.progress .track{
+    stroke: rgb(56, 71, 83);
+}
+.progress .fill {
+    stroke: rgb(255, 255, 255);
+    stroke-dasharray: 219.99078369140625;
+    stroke-dashoffset: -219.99078369140625;
+}
+.progress.blue .fill {
+    stroke: rgb(11, 158, 60);
+}
+.progress.green .fill {
+    stroke: rgb(16, 17, 15);
+}
+.progress .value, .progress .text {
+    font-family: 'Open Sans';
+    fill: rgb(255, 255, 255);
+    text-anchor: middle;
+}
+.progress .text {
+    font-size: 12px;
+}
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+        cursor: default;
+}
+
+
+.table-wrapper-scroll-y {
+  display: block;
+  max-height: 300px;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+
+  .table-wrapper-scroll-y::-webkit-scrollbar {
+    display: none;
+  }
+
+  

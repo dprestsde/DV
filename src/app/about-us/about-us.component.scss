@@ -1,0 +1,46 @@
+.intro-header {
+    height: unset !important;
+  }
+  .intro-2 {
+    background: url("https://images.pexels.com/photos/450055/pexels-photo-450055.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")no-repeat center center;
+    background-size: cover;
+  }
+  .view {
+    height: 100vh !important; 
+  }
+  .top-nav-collapse {
+    background-color: #86C232 !important;
+  }
+  .navbar:not(.top-nav-collapse) {
+    background: transparent !important;
+  }
+  @media (max-width: 768px) {
+    .navbar:not(.top-nav-collapse) {
+      background: #86C232 !important;
+    }
+  }
+  .rgba-gradient .full-bg-img {
+    background: linear-gradient(45deg, rgba(4, 230, 91, 0.4), rgba(12, 230, 23, 0.4) 100%);
+  }
+  .card {
+    background-color: rgba(229, 228, 255, 0.2);
+  }
+  
+  .md-form .prefix {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  .md-form label {
+    color: #ffffff;
+  }
+  h6 {
+    line-height: 1.7;
+  }
+  @media (max-width: 740px) {
+    .full-height,
+    .full-height body,
+    .full-height header,
+    .full-height header .view {
+      height: 1040px;
+    }
+  }

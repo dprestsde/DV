@@ -1,0 +1,77 @@
+
+
+    #circle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      width: 220px;
+        height: 220px;	
+    }
+    
+    .loader {
+        width: calc(100% - 0px);
+      height: calc(100% - 0px);
+      border: 8px solid #162534;
+      border-top: 8px solid rgb(9, 206, 35);
+      border-radius: 50%;
+      animation: rotate 5s linear infinite;
+    }
+    
+    @keyframes rotate {
+    100% {transform: rotate(360deg);}
+    } 
+  
+  
+  
+    /*===== Not The CSS :P =====*/
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+  
+  
+  #wrapper{
+      position: relative;
+      top: 80px;
+    width: 404px;
+    background-color: black;
+  }
+  
+  /*===== The CSS =====*/
+  .progress{
+      width: 100px;
+      height: 100px;
+  }
+  .progress .track, .progress .fill{
+      fill: rgba(0, 0, 0, 0);
+      stroke-width: 3;
+  }
+  .progress .track{
+      stroke: rgb(56, 71, 83);
+  }
+  .progress .fill {
+      stroke: rgb(255, 255, 255);
+      stroke-dasharray: 219.99078369140625;
+      stroke-dashoffset: -219.99078369140625;
+  }
+  .progress.blue .fill {
+      stroke: rgb(11, 158, 60);
+  }
+  .progress.green .fill {
+      stroke: rgb(16, 17, 15);
+  }
+  .progress .value, .progress .text {
+      font-family: 'Open Sans';
+      fill: rgb(255, 255, 255);
+      text-anchor: middle;
+  }
+  .progress .text {
+      font-size: 12px;
+  }
+  .noselect {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+          cursor: default;
+  }
